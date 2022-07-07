@@ -30,7 +30,7 @@ gridItem.forEach(gridItem => {
     })
 })
 gridItem.forEach(gridItem => {
-    gridItem.addEventListener('mouseout', () => {
+    gridItem.addEventListener('transitionend', () => {
         gridItem.classList.remove('active');
     })
 })

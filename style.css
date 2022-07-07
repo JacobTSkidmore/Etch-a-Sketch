@@ -18,8 +18,7 @@ body {
 
 .row .item {
     flex: 1 1 auto;
-    border: 1px solid blue;
-    transition: 2s ease-in-out;
+    transition: 1s ease-out;
 }
 
 .active {
