@@ -1,0 +1,28 @@
+body {
+    background-color: #000;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid .row {
+    display: flex;
+    flex: 1 1 auto;
+
+}
+
+.row .item {
+    flex: 1 1 auto;
+    border: 1px solid blue;
+    transition: 2s ease-in-out;
+}
+
+.active {
+    background-color: red;
+    transition: none;
+}
