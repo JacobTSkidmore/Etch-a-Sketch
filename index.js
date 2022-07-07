@@ -42,11 +42,6 @@ function setHover() {
             gridItem.classList.add('active');
         })
     })
-    gridItem.forEach(gridItem => {
-        gridItem.addEventListener('transitionend', () => {
-            gridItem.classList.remove('active');
-        })
-    })
 }
 
 
