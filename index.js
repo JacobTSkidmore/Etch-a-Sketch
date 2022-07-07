@@ -10,7 +10,7 @@ function fillGridRows(rowNum) {
 }
 
 function fillGridColumns(columnNum) {
-    for (i = 0; i < rowFill.length - 1; i++) {
+    for (i = 0; i < rowFill.length; i++) {
         for (j = 0; j < columnNum; j++) {
             let column = document.createElement('div');
             column.classList.add('item');
@@ -19,19 +19,34 @@ function fillGridColumns(columnNum) {
     }
     
 }
-fillGridRows(16);
-fillGridColumns(16);
 
-let gridItem = document.querySelectorAll('.item');
+function setGrid() {
+    grid.innerHTML = '';
+    let selectedSquares = parseFloat(prompt('What width and height for the grid? (One number for both)', '0'));
+    if (isNaN(selectedSquares) || selectedSquares > 100) {
+        alert('Please enter a number below 100!');
+        setGrid();
+    } 
+    fillGridRows(selectedSquares);
+    fillGridColumns(selectedSquares);
+    setHover();
+}
+let button = document.querySelector('.setGrid');
+button.addEventListener('click', setGrid);
 
-gridItem.forEach(gridItem => {
-    gridItem.addEventListener('mouseover', () => {
-        gridItem.classList.add('active');
+
+function setHover() {
+    let gridItem = document.querySelectorAll('.item');
+    gridItem.forEach(gridItem => {
+        gridItem.addEventListener('mouseover', () => {
+            gridItem.classList.add('active');
+        })
     })
-})
-gridItem.forEach(gridItem => {
-    gridItem.addEventListener('transitionend', () => {
-        gridItem.classList.remove('active');
+    gridItem.forEach(gridItem => {
+        gridItem.addEventListener('transitionend', () => {
+            gridItem.classList.remove('active');
+        })
     })
-})
+}
+
 
